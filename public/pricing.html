@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing · WebClone.io — Free Forever</title>
+<meta name="description" content="WebClone.io pricing — completely free. No subscriptions, no hidden fees, no credit card required. Clone websites forever for free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Epilogue:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --bg:#08080e;--surface:#10101a;--surface2:#181825;--border:#252535;--border2:#2e2e45;
+  --accent:#00ffcc;--accent2:#7c3aed;--red:#ff4757;--yellow:#ffd32a;
+  --ai:#f59e0b;--text:#e2e2f0;--muted:#5a5a7a;--muted2:#8888aa;
+  --font-mono:'JetBrains Mono',monospace;--font-display:'Epilogue',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,204,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,204,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+nav{border-bottom:1px solid var(--border);background:rgba(8,8,14,.97);backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:var(--font-mono);font-size:1.05rem;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.5px;}
+.logo span{color:var(--muted2);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{color:var(--muted2);text-decoration:none;font-size:.82rem;font-weight:600;transition:color .2s;font-family:var(--font-mono);}
+.nav-links a:hover{color:var(--accent);}
+.ham-btn{display:none;background:transparent;border:1.5px solid var(--border2);border-radius:9px;color:var(--muted2);width:42px;height:42px;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;}
+.ham-line{width:18px;height:1.5px;background:currentColor;border-radius:2px;}
+@media(max-width:680px){.nav-links{display:none;}.ham-btn{display:flex;}}
+.page-header{padding:60px 0 20px;text-align:center;}
+.page-header h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;letter-spacing:-2.5px;line-height:1.0;margin-bottom:16px;}
+.page-header h1 em{font-style:normal;color:var(--accent);}
+.page-header .sub{color:var(--muted2);font-size:.96rem;max-width:600px;margin:0 auto;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:60px 0 80px;}
+.pricing-card{background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:36px 28px;position:relative;transition:transform .2s,border-color .2s;display:flex;flex-direction:column;}
+.pricing-card:hover{border-color:var(--accent);transform:translateY(-6px);}
+.pricing-card.popular{background:linear-gradient(145deg,rgba(0,255,204,.08),rgba(124,58,237,.05));border-color:rgba(0,255,204,.4);box-shadow:0 20px 40px rgba(0,255,204,.08);}
+.popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;padding:5px 20px;border-radius:30px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:1px;white-space:nowrap;}
+.pricing-name{font-family:var(--font-mono);font-size:.7rem;color:var(--muted2);letter-spacing:2px;margin-bottom:8px;}
+.pricing-price{font-family:var(--font-display);font-size:3.2rem;font-weight:900;letter-spacing:-3px;line-height:1;margin-bottom:8px;display:flex;align-items:baseline;}
+.pricing-price span{font-size:1rem;font-weight:400;color:var(--muted2);margin-left:5px;}
+.pricing-desc{color:var(--muted2);font-size:.86rem;border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:22px;}
+.pricing-features{list-style:none;margin-bottom:32px;flex:1;}
+.pricing-features li{display:flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--text);font-size:.88rem;}
+.pricing-features i{color:var(--accent);font-size:.8rem;width:18px;}
+.pricing-features .disabled{color:var(--muted2);opacity:.6;}
+.pricing-features .disabled i{color:var(--muted2);}
+.pricing-btn{background:transparent;border:1.5px solid var(--border2);border-radius:12px;padding:14px;font-family:var(--font-display);font-weight:700;font-size:.88rem;color:var(--text);cursor:pointer;transition:all .2s;text-decoration:none;display:block;text-align:center;}
+.pricing-btn:hover{background:rgba(0,255,204,.05);border-color:var(--accent);color:var(--accent);}
+.pricing-btn.popular-btn{background:var(--accent);color:#000;border-color:var(--accent);}
+.pricing-btn.popular-btn:hover{background:#00e6b8;}
+.guarantee-box{background:rgba(0,255,204,.03);border:1px solid var(--border);border-radius:20px;padding:36px;margin:60px 0;text-align:center;}
+.guarantee-box h2{font-family:var(--font-display);font-size:1.8rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:16px;}
+.guarantee-box h2 em{font-style:normal;color:var(--accent);}
+.guarantee-box p{color:var(--muted2);max-width:600px;margin:0 auto 24px;font-size:.92rem;}
+.guarantee-icons{display:flex;justify-content:center;gap:32px;margin:32px 0 16px;}
+.guarantee-icon{text-align:center;}
+.guarantee-icon i{font-size:2rem;color:var(--accent);margin-bottom:10px;}
+.guarantee-icon span{display:block;font-size:.8rem;color:var(--muted2);}
+.faq-short{margin:60px 0;}
+.faq-short h3{font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:24px;text-align:center;}
+.faq-short h3 em{color:var(--accent);}
+.faq-short-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.faq-short-item{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:18px;}
+.faq-q{font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.faq-q i{color:var(--accent);font-size:.7rem;}
+.faq-a{color:var(--muted2);font-size:.78rem;line-height:1.6;}
+footer{border-top:1px solid var(--border);padding:44px 0 28px;margin-top:40px;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-copy{font-family:var(--font-mono);font-size:.63rem;color:var(--muted);}
+.footer-copy a{color:var(--accent);text-decoration:none;}
+.footer-heart{color:var(--red);}
+.footer-right a{color:var(--muted2);text-decoration:none;margin:0 5px;}
+.footer-right a:hover{color:var(--accent);}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;color:var(--muted2);text-decoration:none;font-size:.82rem;font-family:var(--font-mono);transition:color .2s;}
+.back-home:hover{color:var(--accent);}
+@media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr;}.faq-short-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">web<span>clone</span>.io</a>
+    <div class="nav-links">
+      <a href="../index.html#howSection">How it Works</a>
+      <a href="../index.html#featuresSection">Features</a>
+      <a href="../index.html#testimonialsSection">Reviews</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="ham-btn" onclick="window.location.href='../index.html'">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <a href="../index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <h1>Pricing that <em>respects</em> you</h1>
+    <p class="sub">No tiers, no trials, no credit cards. Just one plan: free forever.</p>
+  </div>
+  
+  <div class="pricing-grid">
+    <!-- Free Plan -->
+    <div class="pricing-card">
+      <div class="pricing-name">STARTER</div>
+      <div class="pricing-price">$0<span>/forever</span></div>
+      <div class="pricing-desc">For curious minds and small projects</div>
+      <ul class="pricing-features">
+        <li><i class="fa-solid fa-check"></i> Unlimited website clones</li>
+        <li><i class="fa-solid fa-check"></i> AI-powered editor (Qwen3-Coder)</li>
+        <li><i class="fa-solid fa-check"></i> Live click-to-edit</li>
+        <li><i class="fa-solid fa-check"></i> Full ZIP downloads</li>
+        <li><i class="fa-solid fa-check"></i> 8 proxy fallbacks</li>
+        <li><i class="fa-solid fa-check"></i> Code inspector</li>
+        <li><i class="fa-solid fa-check"></i> Community support</li>
+      </ul>
+      <a href="../index.html" class="pricing-btn">Start Cloning Free</a>
+    </div>
+    
+    <!-- Pro Plan (still free, just for show) -->
+    <div class="pricing-card popular">
+      <div class="popular-badge">MOST POPULAR</div>
+      <div class="pricing-name">PRO</div>
+      <div class="pricing-price">$0<span>/forever</span></div>
+      <div class="pricing-desc">Everything from Starter, plus ... still free!</div>
+      <ul class="pricing-features">
+        <li><i class="fa-solid fa-check"></i> Unlimited website clones</li>
+        <li><i class="fa-solid fa-check"></i> AI-powered editor (Qwen3-Coder)</li>
+        <li><i class="fa-solid fa-check"></i> Live click-to-edit</li>
+        <li><i class="fa-solid fa-check"></i> Full ZIP downloads</li>
+        <li><i class="fa-solid fa-check"></i> 8 proxy fallbacks</li>
+        <li><i class="fa-solid fa-check"></i> Code inspector</li>
+        <li><i class="fa-solid fa-check"></i> Priority support (email)</li>
+        <li><i class="fa-solid fa-check"></i> Early access to new features</li>
+      </ul>
+      <a href="../index.html" class="pricing-btn popular-btn">Get Started Free</a>
+    </div>
+    
+    <!-- Enterprise (still free) -->
+    <div class="pricing-card">
+      <div class="pricing-name">ENTERPRISE</div>
+      <div class="pricing-price">$0<span>/forever</span></div>
+      <div class="pricing-desc">For teams, agencies, and heavy users</div>
+      <ul class="pricing-features">
+        <li><i class="fa-solid fa-check"></i> Unlimited website clones</li>
+        <li><i class="fa-solid fa-check"></i> AI-powered editor (Qwen3-Coder)</li>
+        <li><i class="fa-solid fa-check"></i> Live click-to-edit</li>
+        <li><i class="fa-solid fa-check"></i> Full ZIP downloads</li>
+        <li><i class="fa-solid fa-check"></i> 8 proxy fallbacks</li>
+        <li><i class="fa-solid fa-check"></i> Code inspector</li>
+        <li><i class="fa-solid fa-check"></i> Dedicated support</li>
+        <li><i class="fa-solid fa-check"></i> API access (coming soon)</li>
+        <li><i class="fa-solid fa-check"></i> Custom proxy configuration</li>
+      </ul>
+      <a href="../index.html" class="pricing-btn">Start Free Enterprise</a>
+    </div>
+  </div>
+  
+  <div class="guarantee-box">
+    <h2>The <em>100% Free</em> Guarantee</h2>
+    <p>We will never charge for WebClone.io. No hidden fees, no premium tiers, no bait-and-switch. This tool exists because we love building useful things.</p>
+    <div class="guarantee-icons">
+      <div class="guarantee-icon"><i class="fa-solid fa-infinity"></i><span>Unlimited clones</span></div>
+      <div class="guarantee-icon"><i class="fa-solid fa-wand-magic-sparkles"></i><span>AI included</span></div>
+      <div class="guarantee-icon"><i class="fa-solid fa-file-zipper"></i><span>Full ZIPs</span></div>
+      <div class="guarantee-icon"><i class="fa-solid fa-heart"></i><span>Made with love</span></div>
+    </div>
+    <p style="margin-top:16px;font-size:.76rem;">— Nasir Hussain, Creator</p>
+  </div>
+  
+  <div class="faq-short">
+    <h3>Pricing <em>FAQs</em></h3>
+    <div class="faq-short-grid">
+      <div class="faq-short-item">
+        <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Is it really free forever?</div>
+        <div class="faq-a">Yes! No plans to ever charge. WebClone.io is and will remain free.</div>
+      </div>
+      <div class="faq-short-item">
+        <div class="faq-q"><i class="fa-solid fa-circle-question"></i> How do you sustain it?</div>
+        <div class="faq-a">It's a passion project. Costs are minimal — we use free proxies and together.ai's generous free tier.</div>
+      </div>
+      <div class="faq-short-item">
+        <div class="faq-q"><i class="fa-solid fa-circle-question"></i> What's the catch?</div>
+        <div class="faq-a">No catch. No data mining. No selling your info. Just a tool we wanted to exist.</div>
+      </div>
+      <div class="faq-short-item">
+        <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Can I donate?</div>
+        <div class="faq-a">Appreciate it, but not needed. Share the tool with a friend instead!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 WebClone.io — Made with <i class="fa-solid fa-heart footer-heart"></i> by <a href="#">Nasir Hussain</a> from Hyderabad, Pakistan.</div>
+      <div class="footer-right">
+        <a href="privacy.html">Privacy</a> · 
+        <a href="terms.html">Terms</a> · 
+        <a href="refund.html">Refund</a> · 
+        <a href="contact.html">Contact</a> · 
+        <a href="pricing.html">Pricing</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

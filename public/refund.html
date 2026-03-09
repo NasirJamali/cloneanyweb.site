@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Policy · WebClone.io — Free Forever</title>
+<meta name="description" content="Refund Policy for WebClone.io. Since our tool is completely free, no refunds are needed or issued. Learn more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Epilogue:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Same style as privacy.html */
+:root{
+  --bg:#08080e;--surface:#10101a;--surface2:#181825;--border:#252535;--border2:#2e2e45;
+  --accent:#00ffcc;--accent2:#7c3aed;--red:#ff4757;--yellow:#ffd32a;
+  --ai:#f59e0b;--text:#e2e2f0;--muted:#5a5a7a;--muted2:#8888aa;
+  --font-mono:'JetBrains Mono',monospace;--font-display:'Epilogue',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,204,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,204,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0;}
+.container{max-width:1000px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+nav{border-bottom:1px solid var(--border);background:rgba(8,8,14,.97);backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:var(--font-mono);font-size:1.05rem;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:-.5px;}
+.logo span{color:var(--muted2);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{color:var(--muted2);text-decoration:none;font-size:.82rem;font-weight:600;transition:color .2s;font-family:var(--font-mono);}
+.nav-links a:hover{color:var(--accent);}
+.ham-btn{display:none;background:transparent;border:1.5px solid var(--border2);border-radius:9px;color:var(--muted2);width:42px;height:42px;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;}
+.ham-line{width:18px;height:1.5px;background:currentColor;border-radius:2px;}
+@media(max-width:680px){.nav-links{display:none;}.ham-btn{display:flex;}}
+.page-header{padding:60px 0 20px;}
+.page-header h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;letter-spacing:-2.5px;line-height:1.0;margin-bottom:16px;}
+.page-header h1 em{font-style:normal;color:var(--accent);}
+.page-header .meta{font-family:var(--font-mono);font-size:.7rem;color:var(--muted2);border-top:1px solid var(--border);padding-top:18px;margin-top:8px;}
+.content-card{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:48px;margin-bottom:60px;}
+.content-card h2{font-family:var(--font-display);font-size:1.5rem;font-weight:800;letter-spacing:-1px;margin:32px 0 16px;color:var(--accent);}
+.content-card h2:first-child{margin-top:0;}
+.content-card p{color:var(--muted2);line-height:1.8;font-size:.92rem;margin-bottom:16px;}
+.content-card ul,.content-card ol{margin:0 0 20px 25px;color:var(--muted2);line-height:1.8;font-size:.92rem;}
+.content-card li{margin-bottom:6px;}
+.content-card hr{border:none;border-top:1px solid var(--border);margin:32px 0;}
+.content-card .highlight{background:rgba(0,255,204,.05);border-left:3px solid var(--accent);padding:18px 22px;border-radius:8px;margin:24px 0;}
+footer{border-top:1px solid var(--border);padding:44px 0 28px;margin-top:40px;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-copy{font-family:var(--font-mono);font-size:.63rem;color:var(--muted);}
+.footer-copy a{color:var(--accent);text-decoration:none;}
+.footer-heart{color:var(--red);}
+.footer-right a{color:var(--muted2);text-decoration:none;margin:0 5px;}
+.footer-right a:hover{color:var(--accent);}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;color:var(--muted2);text-decoration:none;font-size:.82rem;font-family:var(--font-mono);transition:color .2s;}
+.back-home:hover{color:var(--accent);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">web<span>clone</span>.io</a>
+    <div class="nav-links">
+      <a href="../index.html#howSection">How it Works</a>
+      <a href="../index.html#featuresSection">Features</a>
+      <a href="../index.html#testimonialsSection">Reviews</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="ham-btn" onclick="window.location.href='../index.html'">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <a href="../index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <h1>Refund <em>Policy</em></h1>
+    <div class="meta">Last Updated: March 9, 2026</div>
+  </div>
+  
+  <div class="content-card">
+    <div class="highlight" style="border-left-color:var(--ai);">
+      <p><i class="fa-solid fa-face-smile" style="color:var(--ai);margin-right:8px;font-size:1.3rem;"></i> <strong>Good news:</strong> WebClone.io is 100% free, always has been, always will be. No payments, no subscriptions, no hidden fees.</p>
+    </div>
+    
+    <h2>The Short Version</h2>
+    <p>Since we don't charge anything to use WebClone.io, there's nothing to refund. You can clone, edit, and download as many websites as you want — completely free.</p>
+    
+    <h2>Why We're Free</h2>
+    <p>WebClone.io was created as a passion project to help developers, designers, and curious people learn from the web. We believe powerful tools shouldn't require a credit card. Our costs are covered by:</p>
+    <ul>
+      <li>💚 Our own love for building useful things</li>
+      <li>🛠️ Using free tiers and open-source proxies where possible</li>
+      <li>🤝 Community support and contributions</li>
+    </ul>
+    
+    <h2>What If Something Goes Wrong?</h2>
+    <p>If a website fails to clone, or the AI editor doesn't work as expected, we're sorry — but you haven't lost any money. You can:</p>
+    <ul>
+      <li>Try again with a different URL</li>
+      <li>Check our <a href="contact.html" style="color:var(--accent);">Contact page</a> to report issues</li>
+      <li>Contribute to improving the tool if you're a developer</li>
+    </ul>
+    <p>We do our best to keep the service running smoothly, but as a free tool, there are no service guarantees.</p>
+    
+    <h2>Donations (Not Required, But Appreciated)</h2>
+    <p>If you love WebClone.io and want to support its development, you can:</p>
+    <ul>
+      <li>⭐ Star us on GitHub (if we ever open-source)</li>
+      <li>🐦 Share the tool on Twitter, LinkedIn, or with friends</li>
+      <li>☕ Buy us a coffee — contact us for details</li>
+    </ul>
+    
+    <h2>No Hidden Costs</h2>
+    <p>We will never surprise you with a bill. There are no premium tiers, no paid features, no "unlock full access" buttons. What you see is what you get — completely free, forever.</p>
+    
+    <hr>
+    
+    <p style="text-align:center;margin-top:24px;">Still have questions? <a href="contact.html" style="color:var(--accent);font-weight:700;">Reach out anytime →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 WebClone.io — Made with <i class="fa-solid fa-heart footer-heart"></i> by <a href="#">Nasir Hussain</a> from Hyderabad, Pakistan.</div>
+      <div class="footer-right">
+        <a href="privacy.html">Privacy</a> · 
+        <a href="terms.html">Terms</a> · 
+        <a href="refund.html">Refund</a> · 
+        <a href="contact.html">Contact</a> · 
+        <a href="pricing.html">Pricing</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
